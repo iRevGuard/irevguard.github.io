@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="CodeView X — a versatile code editor and document viewer for iOS.">
+  <title>CodeView X — Future Apps</title>
+  <style>
+    :root {
+      --ink: #101416;
+      --deep: #172021;
+      --forest: #273f3a;
+      --paper: #f2eee4;
+      --mist: #d9e3dc;
+      --sand: #e3d4bd;
+      --signal: #f6c453;
+      --coral: #ba5b3c;
+      --muted: #91a6a3;
+      --body: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; color: #f4f0e8; background: var(--ink); font-family: var(--mono); }
+    a { color: inherit; text-decoration: none; }
+    .nav, .hero, .privacy, .footer { padding-inline: clamp(24px, 6vw, 96px); }
+    .nav { display: flex; justify-content: space-between; align-items: center; gap: 24px; padding-block: 24px; border-bottom: 1px solid #334044; }
+    .brand { color: var(--signal); font-size: 18px; font-weight: 900; letter-spacing: .08em; }
+    .nav-note { color: var(--muted); font-size: 10px; letter-spacing: .14em; text-align: right; }
+
+    .hero { display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(270px, .8fr); gap: clamp(42px, 6vw, 100px); padding-block: clamp(86px, 10vw, 150px); background: radial-gradient(circle at 84% 22%, #293c3a 0, var(--ink) 42%), linear-gradient(135deg, #182322, var(--ink)); }
+    .eyebrow, .section-label { display: block; color: var(--signal); font-size: 11px; letter-spacing: .2em; }
+    h1, h2, h3, p { margin-top: 0; }
+    h1, h2, h3 { letter-spacing: -.06em; line-height: .96; }
+    h1 { max-width: 850px; margin: 22px 0 34px; color: #fffaf0; font-size: clamp(52px, 8vw, 112px); }
+    h1 em { color: var(--signal); font-style: normal; }
+    .hero-copy > p { max-width: 650px; color: #bdcbc7; font: 20px/1.65 var(--body); }
+    .actions { display: flex; flex-wrap: wrap; gap: 16px; margin-top: 38px; }
+    .button { display: inline-block; padding: 15px 23px; border: 1px solid transparent; border-radius: 999px; font-weight: 900; transition: transform .15s ease, filter .15s ease; }
+    .button:hover { transform: translateY(-3px); filter: brightness(1.08); }
+    .button-primary { color: var(--ink); background: var(--signal); }
+    .button-secondary { color: #d6e0d9; border-color: #5a6f6a; }
+    .hero-panel { align-self: end; padding: 30px; border: 1px solid #536965; background: linear-gradient(155deg, #233936, #192321); box-shadow: 12px 12px 0 var(--signal); }
+    .hero-panel .section-label { margin-bottom: 30px; }
+    .hero-panel h2 { margin-bottom: 18px; font-size: 42px; }
+    .hero-panel p { color: #c6d4ce; font: 16px/1.6 var(--body); }
+
+    .privacy { padding-block: clamp(80px, 10vw, 150px); background: var(--deep); }
+    .privacy h2 { max-width: 780px; color: #f4f0e8; margin: 18px 0 20px; font-size: clamp(44px, 6vw, 82px); }
+    .privacy-copy > p { max-width: 720px; color: #becdc5; font: 18px/1.7 var(--body); }
+    .privacy-content { max-width: 780px; }
+    .privacy-content h3 { color: var(--signal); font-size: 22px; margin: 42px 0 14px; }
+    .privacy-content p { color: #becdc5; font: 17px/1.7 var(--body); margin: 14px 0; }
+    .privacy-content ul { margin: 14px 0; padding-left: 24px; color: #becdc5; font: 17px/1.7 var(--body); }
+    .privacy-content li { margin-bottom: 8px; }
+    .privacy-content strong { color: #f4f0e8; }
+
+    .footer { padding-top: clamp(80px, 10vw, 150px); padding-bottom: 42px; text-align: center; background: radial-gradient(circle at 50% 0, #6f3c2d 0, var(--deep) 46%); }
+    .footer h2 { max-width: 800px; margin-inline: auto; font-size: clamp(44px, 6vw, 82px); margin: 18px 0 20px; color: #f4f0e8; }
+    .footer p { max-width: 560px; margin-inline: auto; color: #c1cdc5; font: 18px/1.6 var(--body); }
+    .footer .button { margin-top: 10px; }
+    .footer-meta { margin-top: 90px; color: #8da29b !important; font: 10px/1.6 var(--mono) !important; letter-spacing: .08em; }
+
+    @media (max-width: 850px) {
+      .hero { grid-template-columns: 1fr; }
+      .hero-panel { max-width: 520px; }
+    }
+    @media (max-width: 560px) {
+      .nav { align-items: flex-start; flex-direction: column; }
+      .nav-note { text-align: left; }
+      h1 { font-size: clamp(48px, 16vw, 76px); }
+      .hero-panel { box-shadow: 7px 7px 0 var(--signal); }
+    }
+  </style>
+</head>
+<body>
+  <header class="nav">
+    <a class="brand" href="./index.html">FUTURE / APPS</a>
+    <span class="nav-note"><a href="./index.html">← Back to all apps</a></span>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-copy">
+        <span class="eyebrow">01 / BUILD</span>
+        <h1>CodeView <em>X</em></h1>
+        <p>A versatile code editor and document viewer for iOS. Browse files, edit inline, and move between code and documents without sending contents to a server.</p>
+        <div class="actions">
+          <a class="button button-primary" href="https://apps.apple.com/us/app/codeview-x/id6804248168" target="_blank" rel="noopener">Download on the App Store</a>
+          <a class="button button-secondary" href="#privacy">Read the privacy policy</a>
+        </div>
+      </div>
+      <aside class="hero-panel">
+        <span class="section-label">THE FACTS</span>
+        <h2>Local editing.</h2>
+        <p>40+ languages · PDF · DOCX · XLSX · PPTX · light + dark themes · inline editor · no cloud layer</p>
+      </aside>
+    </section>
+
+    <section class="privacy" id="privacy">
+      <div class="privacy-copy">
+        <span class="section-label">PRIVACY POLICY</span>
+        <h2>Your data has a home.<br>It is usually your device.</h2>
+        <p>This privacy policy informs you about the processing of personal data when using the mobile application <strong>CodeView X</strong> (hereinafter: "App").</p>
+      </div>
+      <div class="privacy-content">
+        <h3>1. General</h3>
+        <p>This privacy policy informs you about the processing of personal data when using the mobile application <strong>CodeView X</strong> (hereinafter: "App").</p>
+
+        <h3>2. No Collection of Personal Data</h3>
+        <p><strong>CodeView X does not collect, store, or transmit any personal data.</strong></p>
+        <p>The app is a local file editor and viewer. All files you open, create, or edit remain exclusively on your device. No data is transferred to servers or shared with third parties.</p>
+
+        <h3>3. File Access</h3>
+        <p>The app only accesses files that you explicitly select or create in folders you choose.</p>
+        <ul>
+          <li><strong>Android</strong><br>The permissions <code>READ_EXTERNAL_STORAGE</code>, <code>WRITE_EXTERNAL_STORAGE</code>, and <code>MANAGE_EXTERNAL_STORAGE</code> are required to read, save, and manage files.</li>
+          <li><strong>iOS</strong><br>Access to the document picker (iCloud Drive, local) may be requested to import and save files.</li>
+        </ul>
+        <p><strong>Important:</strong> The app does not store file contents on external servers. All operations take place exclusively locally.</p>
+
+        <h3>4. Local Settings</h3>
+        <p>The app uses <code>shared_preferences</code> to save your settings (e.g., theme, font size, recently opened files) locally on your device. This data is not read or transmitted.</p>
+
+        <h3>5. Fonts</h3>
+        <p>If you select custom fonts, they may be loaded from the internet via <strong>Google Fonts</strong>. In this case, Google's privacy policy applies. The app itself does not store any data about downloaded fonts.</p>
+
+        <h3>6. Document Formats</h3>
+        <p>To display PDF, Excel, and Word files, the libraries <strong>Syncfusion Flutter PDF</strong> and <strong>Syncfusion Flutter XLSIO</strong> are used. These process the files exclusively on your device. No file contents are transmitted to Syncfusion servers.</p>
+
+        <h3>7. No Analytics, Advertising, or Tracking</h3>
+        <ul>
+          <li>No analytics services, advertising networks, or tracking tools are used.</li>
+          <li>There are no automated systems for collecting usage behavior.</li>
+          <li>No cookies or similar technologies are used.</li>
+        </ul>
+
+        <h3>8. Security</h3>
+        <p>Since all files and settings are stored exclusively locally, the security of your data is your own responsibility (e.g., through device lock, encryption).</p>
+
+        <h3>9. Changes to This Privacy Policy</h3>
+        <p>This privacy policy may be updated to reflect changes to the app or legal requirements. The current version is always available in the repository.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <h2>Make room for better software.</h2>
+    <p>Follow the projects, try the apps, and tell us what deserves a sharper second pass.</p>
+    <a class="button button-primary" href="mailto:hello@future-apps.com">Get in touch</a>
+    <p class="footer-meta">FUTURE APPS / CodeView X · Local Tasks · Street Runner</p>
+  </footer>
+</body>
+</html>

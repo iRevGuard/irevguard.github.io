@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Street Runner — an endless city chase with real 3D runners for iOS.">
+  <title>Street Runner — Future Apps</title>
+  <style>
+    :root {
+      --ink: #101416;
+      --deep: #172021;
+      --forest: #273f3a;
+      --paper: #f2eee4;
+      --mist: #d9e3dc;
+      --sand: #e3d4bd;
+      --signal: #f6c453;
+      --coral: #ba5b3c;
+      --muted: #91a6a3;
+      --body: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; color: #f4f0e8; background: var(--ink); font-family: var(--mono); }
+    a { color: inherit; text-decoration: none; }
+    .nav, .hero, .privacy, .footer { padding-inline: clamp(24px, 6vw, 96px); }
+    .nav { display: flex; justify-content: space-between; align-items: center; gap: 24px; padding-block: 24px; border-bottom: 1px solid #334044; }
+    .brand { color: var(--signal); font-size: 18px; font-weight: 900; letter-spacing: .08em; }
+    .nav-note { color: var(--muted); font-size: 10px; letter-spacing: .14em; text-align: right; }
+
+    .hero { display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(270px, .8fr); gap: clamp(42px, 6vw, 100px); padding-block: clamp(86px, 10vw, 150px); background: radial-gradient(circle at 84% 22%, #293c3a 0, var(--ink) 42%), linear-gradient(135deg, #182322, var(--ink)); }
+    .eyebrow, .section-label { display: block; color: var(--signal); font-size: 11px; letter-spacing: .2em; }
+    h1, h2, h3, p { margin-top: 0; }
+    h1, h2, h3 { letter-spacing: -.06em; line-height: .96; }
+    h1 { max-width: 850px; margin: 22px 0 34px; color: #fffaf0; font-size: clamp(52px, 8vw, 112px); }
+    h1 em { color: var(--signal); font-style: normal; }
+    .hero-copy > p { max-width: 650px; color: #bdcbc7; font: 20px/1.65 var(--body); }
+    .actions { display: flex; flex-wrap: wrap; gap: 16px; margin-top: 38px; }
+    .button { display: inline-block; padding: 15px 23px; border: 1px solid transparent; border-radius: 999px; font-weight: 900; transition: transform .15s ease, filter .15s ease; }
+    .button:hover { transform: translateY(-3px); filter: brightness(1.08); }
+    .button-primary { color: var(--ink); background: var(--signal); }
+    .button-secondary { color: #d6e0d9; border-color: #5a6f6a; }
+    .hero-panel { align-self: end; padding: 30px; border: 1px solid #536965; background: linear-gradient(155deg, #233936, #192321); box-shadow: 12px 12px 0 var(--signal); }
+    .hero-panel .section-label { margin-bottom: 30px; }
+    .hero-panel h2 { margin-bottom: 18px; font-size: 42px; }
+    .hero-panel p { color: #c6d4ce; font: 16px/1.6 var(--body); }
+
+    .privacy { padding-block: clamp(80px, 10vw, 150px); background: var(--deep); }
+    .privacy h2 { max-width: 780px; color: #f4f0e8; margin: 18px 0 20px; font-size: clamp(44px, 6vw, 82px); }
+    .privacy-copy > p { max-width: 720px; color: #becdc5; font: 18px/1.7 var(--body); }
+    .privacy-content { max-width: 780px; }
+    .privacy-content h3 { color: var(--signal); font-size: 22px; margin: 42px 0 14px; }
+    .privacy-content p { color: #becdc5; font: 17px/1.7 var(--body); margin: 14px 0; }
+    .privacy-content ul { margin: 14px 0; padding-left: 24px; color: #becdc5; font: 17px/1.7 var(--body); }
+    .privacy-content li { margin-bottom: 8px; }
+    .privacy-content strong { color: #f4f0e8; }
+
+    .footer { padding-top: clamp(80px, 10vw, 150px); padding-bottom: 42px; text-align: center; background: radial-gradient(circle at 50% 0, #6f3c2d 0, var(--deep) 46%); }
+    .footer h2 { max-width: 800px; margin-inline: auto; font-size: clamp(44px, 6vw, 82px); margin: 18px 0 20px; color: #f4f0e8; }
+    .footer p { max-width: 560px; margin-inline: auto; color: #c1cdc5; font: 18px/1.6 var(--body); }
+    .footer .button { margin-top: 10px; }
+    .footer-meta { margin-top: 90px; color: #8da29b !important; font: 10px/1.6 var(--mono) !important; letter-spacing: .08em; }
+
+    @media (max-width: 850px) {
+      .hero { grid-template-columns: 1fr; }
+      .hero-panel { max-width: 520px; }
+    }
+    @media (max-width: 560px) {
+      .nav { align-items: flex-start; flex-direction: column; }
+      .nav-note { text-align: left; }
+      h1 { font-size: clamp(48px, 16vw, 76px); }
+      .hero-panel { box-shadow: 7px 7px 0 var(--signal); }
+    }
+  </style>
+</head>
+<body>
+  <header class="nav">
+    <a class="brand" href="./index.html">FUTURE / APPS</a>
+    <span class="nav-note"><a href="./index.html">← Back to all apps</a></span>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-copy">
+        <span class="eyebrow">03 / PLAY</span>
+        <h1>Street <em>Runner</em></h1>
+        <p>An endless city chase with real 3D runners, neon skins, police sirens, coin patterns, and one-thumb controls. Free to play, offline-capable, no pay-to-win.</p>
+        <div class="actions">
+          <a class="button button-primary" href="https://apps.apple.com/us/app/street-runner/id6813200542" target="_blank" rel="noopener">Download on the App Store</a>
+          <a class="button button-secondary" href="#privacy">Read the privacy policy</a>
+        </div>
+      </div>
+      <aside class="hero-panel">
+        <span class="section-label">THE FACTS</span>
+        <h2>Chase mode.</h2>
+        <p>Free · offline-capable · rewarded revive · six runners · neon skins · police chases · no in-app purchases</p>
+      </aside>
+    </section>
+
+    <section class="privacy" id="privacy">
+      <div class="privacy-copy">
+        <span class="section-label">PRIVACY POLICY</span>
+        <h2>Your data has a home.<br>It is usually your device.</h2>
+        <p><strong>Effective date:</strong> 18 September 2026</p>
+        <p>Applies to the mobile game <strong>Street Runner</strong> for Android (<code>com.future.street_runner</code>) and iOS (<code>com.future.street-runner</code>).</p>
+        <p><strong>Deutsche Fassung weiter unten.</strong> / The German version follows below.</p>
+      </div>
+      <div class="privacy-content">
+        <h3>1. Who is responsible</h3>
+        <p>We are the controller for the game itself. Advertising is delivered by Google (Google Ireland Limited / Google LLC), which acts as an independent controller for that processing.</p>
+
+        <h3>2. Short summary</h3>
+        <ul>
+          <li>Street Runner has <strong>no account, no login and no server of our own</strong>. Your game progress never leaves your device.</li>
+          <li>We do <strong>not</strong> run any analytics, crash-reporting or tracking SDK of our own.</li>
+          <li>We show ads through <strong>Google AdMob</strong> (a banner and optional rewarded videos). AdMob may use your <strong>advertising identifier</strong> and technical device data to deliver and measure ads.</li>
+          <li>In the EEA, the UK and Switzerland we ask for your <strong>consent</strong> first (Google-certified consent form, IAB TCF v2), and on iOS for <strong>App Tracking Transparency</strong> permission. You can change or withdraw both at any time.</li>
+          <li>The app requests <strong>no permissions</strong> for camera, microphone, contacts, files or precise location.</li>
+        </ul>
+
+        <h3>3. Data stored on your device</h3>
+        <p>The game saves your progress locally using the operating system's app storage (shared preferences). This is <strong>not</strong> transmitted to us or anyone else:</p>
+        <ul>
+          <li>high score, total coins, total runs and total distance run</li>
+          <li>unlocked characters and skins, and your current selection</li>
+          <li>purchased upgrade levels</li>
+          <li>sound on/off setting</li>
+        </ul>
+        <p>This data stays on your device until you clear the app's data or uninstall the app. We cannot read, restore or delete it for you, because we never receive it.</p>
+
+        <h3>4. Advertising (Google AdMob)</h3>
+        <p>The app displays a banner ad and offers an optional rewarded video (one extra life per run). When an ad is requested, Google may collect and process:</p>
+        <ul>
+          <li>your <strong>advertising identifier</strong> (IDFA on iOS, Advertising ID on Android; on iOS only if you allow tracking)</li>
+          <li><strong>IP address</strong> and the approximate region derived from it</li>
+          <li>device and app information (device model, operating system and version, app version, language, screen properties)</li>
+          <li>ad interaction data (which ad was shown, when, whether it was clicked or completed)</li>
+        </ul>
+        <p>Purposes: delivering ads, personalising ads (only with your consent), frequency capping, measuring ad performance, and preventing fraud and abuse.</p>
+        <p>If you deny tracking on iOS, the IDFA is not used; Google then serves <strong>non-personalised ads</strong> and may still use Apple's <strong>SKAdNetwork</strong> for aggregated install attribution.</p>
+        <p>Google's own information:</p>
+        <ul>
+          <li>How Google uses information from apps that use its services: <a href="https://policies.google.com/technologies/partner-sites" target="_blank" rel="noopener">https://policies.google.com/technologies/partner-sites</a></li>
+          <li>Google Privacy Policy: <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">https://policies.google.com/privacy</a></li>
+          <li>Google ad technology providers: <a href="https://business.safety.google/adsservices/" target="_blank" rel="noopener">https://business.safety.google/adsservices/</a></li>
+        </ul>
+
+        <h3>5. Consent, and how to withdraw it</h3>
+        <p><strong>EEA / UK / Switzerland:</strong> before any ad request, we show a consent form from Google's User Messaging Platform (a Google-certified CMP, IAB TCF v2) which lists the purposes and the ad technology providers. No ad is requested until this is answered.</p>
+        <p><strong>iOS 14.5+:</strong> after that consent message we ask for Apple's App Tracking Transparency permission, which controls whether your advertising identifier may be used.</p>
+        <p><strong>Change or withdraw your choice at any time:</strong> open the main menu and tap the <strong>shield/privacy icon</strong> in the top bar. It reopens the privacy options form where you can edit or revoke every consent. Withdrawing consent does not affect the lawfulness of processing that happened before the withdrawal.</p>
+
+        <h3>6. Legal bases (GDPR Art. 6)</h3>
+        <ul>
+          <li><strong>Consent</strong> (Art. 6(1)(a)) – personalised advertising, ad measurement and any use of your advertising identifier.</li>
+          <li><strong>Legitimate interests</strong> (Art. 6(1)(f)) – running the game, showing non-personalised ads, and protecting against fraud, abuse and technical faults.</li>
+          <li><strong>Contract / pre-contractual steps</strong> (Art. 6(1)(b)) – providing the game you downloaded, where applicable.</li>
+        </ul>
+
+        <h3>7. Recipients and international transfers</h3>
+        <p>Ad data is processed by Google and by the ad technology providers named in the consent form. Some of these recipients are located outside the EEA, in particular in the United States. Such transfers are covered by the <strong>EU-US Data Privacy Framework</strong> and/or <strong>EU Standard Contractual Clauses</strong> with additional safeguards.</p>
+
+        <h3>8. Retention</h3>
+        <ul>
+          <li><strong>On-device game data:</strong> until you delete it (uninstall or clear app data).</li>
+          <li><strong>Advertising data:</strong> Google retains it according to its own retention periods, described in the Google Privacy Policy linked above.</li>
+        </ul>
+
+        <h3>9. Children</h3>
+        <p>Street Runner is a general-audience game and is <strong>not directed at children</strong> under 13 (under 16 in the EEA). We do not knowingly collect personal data from children. If you believe a child has used the app in a way that shared personal data, contact us at the project repository and we will help resolve it (for ad data, we will involve Google).</p>
+
+        <h3>10. Your rights</h3>
+        <p>You have the right to:</p>
+        <ul>
+          <li><strong>access</strong> the personal data processed about you (Art. 15)</li>
+          <li><strong>rectify</strong> inaccurate data (Art. 16)</li>
+          <li><strong>erase</strong> data (Art. 17)</li>
+          <li><strong>restrict</strong> processing (Art. 18)</li>
+          <li><strong>data portability</strong> (Art. 20)</li>
+          <li><strong>object</strong> to processing based on legitimate interests (Art. 21)</li>
+          <li><strong>withdraw consent</strong> at any time (Art. 7(3)) – use the in-app privacy options described in section 5</li>
+          <li><strong>lodge a complaint</strong> with a supervisory authority in your country of residence, work or the place of the alleged infringement</li>
+        </ul>
+        <p>Because the game keeps no personal data on our side, requests about game progress are resolved on your own device (delete the app or clear its data). For advertising data, contact Google via the links in section 4 or open an issue in the project repository — we will forward your request to the relevant partner.</p>
+
+        <p><strong>California (CCPA/CPRA):</strong> we do not sell personal information for money. Cross-context behavioural advertising by ad partners can count as "sharing" under the CPRA; you can opt out by declining or withdrawing consent via the in-app privacy options form.</p>
+
+        <h3>11. Security</h3>
+        <p>All communication with Google's ad services is encrypted in transit (HTTPS/TLS). The game itself transmits nothing, so there is no server database of yours to breach. Local save data is protected by the operating system's app sandboxing.</p>
+
+        <h3>12. Changes to this policy</h3>
+        <p>If the app's data handling changes, we will update this policy and change the effective date above. Material changes will additionally be announced in the app or in the store listing.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <h2>Make room for better software.</h2>
+    <p>Follow the projects, try the apps, and tell us what deserves a sharper second pass.</p>
+    <a class="button button-primary" href="mailto:hello@future-apps.com">Get in touch</a>
+    <p class="footer-meta">FUTURE APPS / CodeView X · Local Tasks · Street Runner</p>
+  </footer>
+</body>
+</html>
