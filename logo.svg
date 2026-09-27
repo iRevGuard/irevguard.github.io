@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28">
+
+  <defs>
+    <clipPath id="round">
+      <rect width="28" height="28" rx="8" ry="8"/>
+    </clipPath>
+
+    <radialGradient id="iconGrad" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#4da3ff"/>
+      <stop offset="33%" stop-color="#7c5cff"/>
+      <stop offset="66%" stop-color="#22d3ee"/>
+      <stop offset="100%" stop-color="#4da3ff"/>
+    </radialGradient>
+
+    <filter id="iconGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="9" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <g clip-path="url(#round)">
+    <rect width="28" height="28" rx="8" fill="url(#iconGrad)" filter="url(#iconGlow)"/>
+    <rect x="4" y="4" width="20" height="20" rx="5" fill="#060912"/>
+  </g>
+
+</svg>

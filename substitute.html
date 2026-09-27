@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Substitute — a modern substitution plan app for students and schools.">
+  <title>Substitute — Future Apps</title>
+  <style>
+    :root {
+      --ink: #101416;
+      --deep: #172021;
+      --forest: #273f3a;
+      --paper: #f2eee4;
+      --mist: #d9e3dc;
+      --sand: #e3d4bd;
+      --signal: #f6c453;
+      --coral: #ba5b3c;
+      --muted: #91a6a3;
+      --body: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; color: #f4f0e8; background: var(--ink); font-family: var(--mono); }
+    a { color: inherit; text-decoration: none; }
+    .nav, .hero, .privacy, .footer { padding-inline: clamp(24px, 6vw, 96px); }
+    .nav { display: flex; justify-content: space-between; align-items: center; gap: 24px; padding-block: 24px; border-bottom: 1px solid #334044; }
+    .brand { color: var(--signal); font-size: 18px; font-weight: 900; letter-spacing: .08em; }
+    .nav-note { color: var(--muted); font-size: 10px; letter-spacing: .14em; text-align: right; }
+
+    .hero { display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(270px, .8fr); gap: clamp(42px, 6vw, 100px); padding-block: clamp(86px, 10vw, 150px); background: radial-gradient(circle at 84% 22%, #293c3a 0, var(--ink) 42%), linear-gradient(135deg, #182322, var(--ink)); }
+    .eyebrow, .section-label { display: block; color: var(--signal); font-size: 11px; letter-spacing: .2em; }
+    h1, h2, h3, p { margin-top: 0; }
+    h1, h2, h3 { letter-spacing: -.06em; line-height: .96; }
+    h1 { max-width: 850px; margin: 22px 0 34px; color: #fffaf0; font-size: clamp(52px, 8vw, 112px); }
+    h1 em { color: var(--signal); font-style: normal; }
+    .hero-copy > p { max-width: 650px; color: #bdcbc7; font: 20px/1.65 var(--body); }
+    .actions { display: flex; flex-wrap: wrap; gap: 16px; margin-top: 38px; }
+    .button { display: inline-block; padding: 15px 23px; border: 1px solid transparent; border-radius: 999px; font-weight: 900; transition: transform .15s ease, filter .15s ease; }
+    .button:hover { transform: translateY(-3px); filter: brightness(1.08); }
+    .button-primary { color: var(--ink); background: var(--signal); }
+    .button-secondary { color: #d6e0d9; border-color: #5a6f6a; }
+    .hero-panel { align-self: end; padding: 30px; border: 1px solid #536965; background: linear-gradient(155deg, #233936, #192321); box-shadow: 12px 12px 0 var(--signal); }
+    .hero-panel .section-label { margin-bottom: 30px; }
+    .hero-panel h2 { margin-bottom: 18px; font-size: 42px; }
+    .hero-panel p { color: #c6d4ce; font: 16px/1.6 var(--body); }
+
+    .privacy { padding-block: clamp(80px, 10vw, 150px); background: var(--deep); }
+    .privacy h2 { max-width: 780px; color: #f4f0e8; margin: 18px 0 20px; font-size: clamp(44px, 6vw, 82px); }
+    .privacy-copy > p { max-width: 720px; color: #becdc5; font: 18px/1.7 var(--body); }
+    .privacy-content { max-width: 780px; }
+    .privacy-content h3 { color: var(--signal); font-size: 22px; margin: 42px 0 14px; }
+    .privacy-content p { color: #becdc5; font: 17px/1.7 var(--body); margin: 14px 0; }
+    .privacy-content ul { margin: 14px 0; padding-left: 24px; color: #becdc5; font: 17px/1.7 var(--body); }
+    .privacy-content li { margin-bottom: 8px; }
+    .privacy-content strong { color: #f4f0e8; }
+    .privacy-content code { background: #334044; padding: 2px 6px; border-radius: 4px; font-size: 15px; }
+
+    .footer { padding-top: clamp(80px, 10vw, 150px); padding-bottom: 42px; text-align: center; background: radial-gradient(circle at 50% 0, #6f3c2d 0, var(--deep) 46%); }
+    .footer h2 { max-width: 800px; margin-inline: auto; font-size: clamp(44px, 6vw, 82px); margin: 18px 0 20px; color: #f4f0e8; }
+    .footer p { max-width: 560px; margin-inline: auto; color: #c1cdc5; font: 18px/1.6 var(--body); }
+    .footer .button { margin-top: 10px; }
+    .footer-meta { margin-top: 90px; color: #8da29b !important; font: 10px/1.6 var(--mono) !important; letter-spacing: .08em; }
+
+    @media (max-width: 850px) {
+      .hero { grid-template-columns: 1fr; }
+      .hero-panel { max-width: 520px; }
+    }
+    @media (max-width: 560px) {
+      .nav { align-items: flex-start; flex-direction: column; }
+      .nav-note { text-align: left; }
+      h1 { font-size: clamp(48px, 16vw, 76px); }
+      .hero-panel { box-shadow: 7px 7px 0 var(--signal); }
+    }
+  </style>
+</head>
+<body>
+  <header class="nav">
+    <a class="brand" href="./index.html">FUTURE / APPS</a>
+    <span class="nav-note"><a href="./index.html">← Back to all apps</a></span>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-copy">
+        <span class="eyebrow">04 / PLAN</span>
+        <h1>Substitute</h1>
+        <p>Substitute is an improved version of the vpMobil app, based on Indiware. Developed to make school life easier for students, Substitute offers a modern and user-friendly interface as well as a variety of useful features.</p>
+        <div class="actions">
+          <a class="button button-primary" href="https://github.com/Sergey842248/Substitute/releases" target="_blank" rel="noopener">Get the APK</a>
+          <a class="button button-secondary" href="#privacy">Read the privacy policy</a>
+        </div>
+      </div>
+      <aside class="hero-panel">
+        <span class="section-label">THE FACTS</span>
+        <h2>School first.</h2>
+        <p>Modern substitution plan · background updates · teacher assignment · room search · multiple favorites · course selection · notifications · QR code sharing · WearOS</p>
+      </aside>
+    </section>
+
+    <section class="privacy" id="privacy">
+      <div class="privacy-copy">
+        <span class="section-label">PRIVACY POLICY</span>
+        <h2>Your data has a home.<br>It is usually your device.</h2>
+        <p><strong>Last updated:</strong> August 23, 2026</p>
+        <p>Substitute ("the App") is an open-source Flutter application that helps students, teachers, and schools view and manage substitution plans based on data provided by Indiware / Stundenplan24 (<code>stundenplan24.de</code>). The App is available as an Android app and an iPhone app.</p>
+        <p>This Privacy Policy explains what information the App processes, how it is used, and your choices. Because Substitute is a local-first application, it is designed to minimize data collection.</p>
+      </div>
+      <div class="privacy-content">
+        <h3>1. Data We Do Not Collect</h3>
+        <p>Substitute does <strong>not</strong>:</p>
+        <ul>
+          <li>Use any third-party analytics, advertising, or tracking SDKs.</li>
+          <li>Use Firebase, crash-reporting, or any remote analytics service.</li>
+          <li>Collect or transmit personal data to the App developer or any server operated by the project.</li>
+          <li>Require you to create an account with us.</li>
+        </ul>
+        <p>There is no backend operated by the Substitute project. We do not store, process, or sell any personal information about you.</p>
+
+        <h3>2. Data Stored Locally on Your Device</h3>
+        <p>To function, the App stores the following information <strong>locally</strong> on your device using the platform's secure local storage (e.g. Android <code>SharedPreferences</code>):</p>
+        <ul>
+          <li><strong>School credentials:</strong> Your school number and the login credentials (username and password) for the substitution plan provider (<code>stundenplan24.de</code>). These are stored only on your device and are used solely to authenticate requests to your school's substitution plan.</li>
+          <li><strong>App preferences:</strong> Your selected language, favorite classes, hidden courses, teacher mappings, and other settings.</li>
+          <li><strong>Substitution plan data:</strong> Cached substitution plans, teacher schedules, and room information downloaded from your school's provider.</li>
+        </ul>
+        <p>This data never leaves your device except to communicate directly with the substitution plan provider you configure (see Section 3).</p>
+
+        <h3>3. Data Shared With Third Parties</h3>
+        <p>The App communicates only with the services you explicitly configure:</p>
+        <ul>
+          <li><strong>Stundenplan24 / Indiware (<code>stundenplan24.de</code>):</strong> The App sends your school number and Basic Auth credentials over HTTPS to fetch your school's substitution plan data. This data sharing is necessary for the core functionality and is governed by your school's and Indiware's own privacy practices.</li>
+          <li><strong>GitHub (<code>api.github.com</code>):</strong> When checking for app updates, the App requests public release information from the official Substitute GitHub repository. No personal data is sent with this request.</li>
+          <li><strong>QR code sharing (App-only):</strong> You may optionally export your school/class login credentials as a QR code to share them with other people. This happens entirely on your device, and the shared credentials are only transmitted when you choose to display or share the code. Scanning a QR code (via the device camera) to import credentials is also processed locally.</li>
+        </ul>
+        <p>We are not responsible for the privacy practices of Stundenplan24, Indiware, GitHub, or any school that provides substitution data.</p>
+
+        <h3>4. Permissions</h3>
+        <ul>
+          <li><strong>Internet:</strong> Required to download substitution plans, check for updates, and open documentation links.</li>
+          <li><strong>Camera (App-only):</strong> Used only to scan QR codes for importing shared credentials. The camera is not used for any other purpose and no images are stored or transmitted.</li>
+          <li><strong>Notifications:</strong> With your permission, the App can send local notifications about changes to the substitution plan. These are generated on your device and do not involve a remote push server.</li>
+        </ul>
+
+        <h3>5. Children's Privacy</h3>
+        <p>Substitute is intended for use by students and schools. It does not knowingly collect personal information from children beyond what is required to display the configured school's substitution plan. If you are a parent or guardian and have concerns, please review the credentials and data stored on the device.</p>
+
+        <h3>6. Your Choices and Rights</h3>
+        <ul>
+          <li>You can delete all locally stored data at any time by clearing the App's storage/data or uninstalling the App.</li>
+          <li>You can disable background updates by restricting battery usage for the App in your device settings (<code>Apps &gt; Substitute &gt; Battery &gt; Restricted</code>).</li>
+          <li>You can revoke camera and notification permissions at any time through your device settings.</li>
+        </ul>
+
+        <h3>7. Changes to This Policy</h3>
+        <p>We may update this Privacy Policy from time to time. Material changes will be reflected by updating the "Last updated" date above. The current version is always available in the project repository.</p>
+
+        <h3>8. Contact</h3>
+        <p>Substitute is an open-source project. If you have any questions about this Privacy Policy, please open an issue on the official GitHub repository:</p>
+        <p><a href="https://github.com/Sergey842248/Substitute" target="_blank" rel="noopener">https://github.com/Sergey842248/Substitute</a></p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <h2>Make room for better software.</h2>
+    <p>Follow the projects, try the apps, and tell us what deserves a sharper second pass.</p>
+    <a class="button button-primary" href="mailto:hello@future-apps.com">Get in touch</a>
+    <p class="footer-meta">FUTURE APPS / CodeView X · Local Tasks · Street Runner · Substitute</p>
+  </footer>
+</body>
+</html>

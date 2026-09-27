@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Future Apps — focused software with a privacy-first point of view.">
   <title>Future Apps — Private tools. Unexpected energy.</title>
+  <link rel="icon" type="image/svg+xml" href="./logo.svg">
   <style>
     :root {
       --ink: #101416;
@@ -58,6 +59,26 @@
     .card:nth-child(1) { background: var(--mist); }
     .card:nth-child(2) { border-top-color: var(--coral); background: var(--sand); }
     .card:nth-child(3) { border-top-color: var(--signal); color: #f6f0e3; background: var(--forest); }
+.card:nth-child(4) {
+    border-top-color: var(--coral);
+    color: #ffffff;
+    background: #351c75;
+}
+
+.card:nth-child(4) p {
+    color: #e8e0ff;
+}
+
+.card:nth-child(4) .features {
+    border-color: #a98cff;
+    color: #f0ebff !important;
+}
+
+.card:nth-child(4) .button {
+    color: #ffffff;
+    background: var(--coral);
+}
+
     .card-label { margin-bottom: 58px; color: var(--coral); }
     .card:nth-child(3) .card-label { color: var(--signal); }
     .card h3 { margin-bottom: 18px; font-size: 38px; }
@@ -158,6 +179,14 @@
           <a class="button" href="https://apps.apple.com/us/app/street-runner/id6813200542" target="_blank" rel="noopener">Download on the App Store</a>
           <a class="button" href="./street-runner.html" target="_blank" rel="noopener">Read privacy policy</a>
         </article>
+        <article class="card" id="substitute">
+          <span class="card-label">04 / PLAN</span>
+          <h3>Substitute</h3>
+          <p>A modern substitution plan app for students and schools. Based on Indiware / Stundenplan24 with background updates, teacher schedules, room search, notifications, and WearOS support.</p>
+          <p class="features">Android + iOS · local-first · QR sharing · no accounts</p>
+          <a class="button" href="https://github.com/Sergey842248/Substitute/releases" target="_blank" rel="noopener">Get the APK</a>
+          <a class="button" href="./substitute.html" target="_blank" rel="noopener">Read privacy policy</a>
+        </article>
       </div>
     </section>
 
@@ -171,8 +200,9 @@
       <div class="privacy-list">
         <p><a href="./codeview-x.html#privacy">01&nbsp;&nbsp; CodeView X — full privacy policy</a></p>
         <p><a href="./local-tasks.html#privacy">02&nbsp;&nbsp; Local Tasks — full privacy policy</a></p>
-        <p><a href="./street-runner.html#privacy">03&nbsp;&nbsp; Street Runner — full privacy policy</a></p>
-        <p>04&nbsp;&nbsp; Export and deletion stay in your hands</p>
+          <p><a href="./street-runner.html#privacy">03&nbsp;&nbsp; Street Runner — full privacy policy</a></p>
+          <p><a href="./substitute.html#privacy">04&nbsp;&nbsp; Substitute — full privacy policy</a></p>
+          <p>05&nbsp;&nbsp; Export and deletion stay in your hands</p>
       </div>
     </section>
   </main>
@@ -181,7 +211,7 @@
     <h2>Make room for better software.</h2>
     <p>Follow the projects, try the apps, and tell us what deserves a sharper second pass.</p>
     <a class="button button-primary" href="mailto:hello@future-apps.com">Get in touch</a>
-    <p class="footer-meta">FUTURE APPS / CodeView X · Local Tasks · Street Runner / Privacy policies available per app</p>
+    <p class="footer-meta">FUTURE APPS / CodeView X · Local Tasks · Street Runner · Substitute / Privacy policies available per app</p>
   </footer>
 </body>
 </html>
